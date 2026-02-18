@@ -25,7 +25,7 @@ MA 02111, USA.
 #include <stdlib.h>
 #include <string.h>
 
-#include <libxml/SAX.h>
+#include <libxml/parser.h>
 #include <libxml/xmlwriter.h>
 
 #include "util.h"

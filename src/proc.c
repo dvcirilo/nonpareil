@@ -29,7 +29,7 @@ MA 02111, USA.
 
 #include <glib.h>
 
-#include <libxml/SAX.h>
+#include <libxml/parser.h>
 
 #include "util.h"
 #include "display.h"

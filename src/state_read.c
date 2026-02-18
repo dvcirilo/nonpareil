@@ -33,7 +33,7 @@ MA 02111, USA.
 #include <gsf/gsf-infile.h>
 
 #include <libxml/xmlwriter.h>
-#include <libxml/SAX.h>
+#include <libxml/parser.h>
 
 #include "util.h"
 #include "xmlutil.h"
