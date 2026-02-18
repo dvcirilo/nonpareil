@@ -8,6 +8,10 @@ src/bin2c
 src/build_ncd
 src/str2png
 src/uasm
+src/nonpareil
+src/udis
+src/modutil
+src/sha-test
 src/*.png
 src/*_l.c
 src/*_l.o
