@@ -1119,9 +1119,7 @@ calcdef_t *calcdef_load (sim_t *sim, char *ncd_fn)
 
   calcdef->sim = sim;
 
-  xmlSAXUserParseFile (& sax_handler,
-		       calcdef,
-		       ncd_fn);
+  xml_sax_parse_file (& sax_handler, calcdef, ncd_fn);
 
   return calcdef;
 }

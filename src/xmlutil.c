@@ -25,6 +25,7 @@ MA 02111, USA.
 
 #include <libxml/xmlwriter.h>
 #include <libxml/entities.h>
+#include <libxml/parser.h>
 
 #include "util.h"
 #include "xmlutil.h"
@@ -143,6 +144,20 @@ xmlTextWriterPtr xml_write_document (const char *fn,
     fatal (2, "can't write DTD\n"); 
 
   return writer;
+}
+
+
+void xml_sax_parse_file (xmlSAXHandlerPtr sax,
+			 void *user_data,
+			 const char *fn)
+{
+#if LIBXML_VERSION >= 21400
+  xmlParserCtxtPtr ctxt = xmlNewSAXParserCtxt (sax, user_data);
+  xmlCtxtReadFile (ctxt, fn, NULL, XML_PARSE_UNZIP);
+  xmlFreeParserCtxt (ctxt);
+#else
+  xmlSAXUserParseFile (sax, user_data, fn);
+#endif
 }
 
 

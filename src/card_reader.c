@@ -268,9 +268,7 @@ static void insert_card (gui_card_reader_t *cr,
 
   if (! new_card)
     {
-      xmlSAXUserParseFile (& cr_sax_handler,
-			   cr,
-			   fn);
+      xml_sax_parse_file (& cr_sax_handler, cr, fn);
       cr->side->dirty = false;  // shouldn't be set in file
     }
 

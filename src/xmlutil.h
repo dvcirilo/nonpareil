@@ -56,6 +56,10 @@ xmlTextWriterPtr xml_write_document (const char *fn,
 				     const int compression);  // 0-9, 0 = none
 
 
+void xml_sax_parse_file (xmlSAXHandlerPtr sax,
+			 void *user_data,
+			 const char *fn);
+
 int xml_strcmp (const xmlChar *s1, const char *s2);
 
 xmlEntityPtr sax_get_entity (void *ref UNUSED,

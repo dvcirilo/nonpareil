@@ -430,9 +430,7 @@ void state_read_xml (sim_t *sim, char *fn)
 
   sdata.sim = sim;
 
-  xmlSAXUserParseFile (& sax_handler,
-		       & sdata,
-		       fn);
+  xml_sax_parse_file (& sax_handler, & sdata, fn);
 
   sim_event (sim,
 	     NULL,
